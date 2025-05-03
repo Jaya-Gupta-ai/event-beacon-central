@@ -1,73 +1,129 @@
-# Welcome to your Lovable project
 
-## Project info
+# Event Beacon Central
 
-**URL**: https://lovable.dev/projects/8de1ec48-87d0-4acf-b725-efa29344e0d9
+A modern web application for discovering and sharing college tech events like hackathons, workshops, and tech talks.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- **Event Dashboard**: Browse upcoming tech events from various colleges
+- **Event Submission**: Add new events manually with comprehensive details
+- **Advanced Filtering**: Search and filter events by date, type, college, or keywords
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
+- **Event Details**: View complete information about each event
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8de1ec48-87d0-4acf-b725-efa29344e0d9) and start prompting.
+- React with TypeScript
+- TailwindCSS for styling
+- Shadcn UI component library
+- React Router for navigation
+- Local Storage for data persistence
+- Date-fns for date formatting
 
-Changes made via Lovable will be committed automatically to this repo.
+## Implementation Details
 
-**Use your preferred IDE**
+### Architecture
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+The application follows a component-based architecture with the following key parts:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **Pages**: Main views like Dashboard, Event Detail, and About
+- **Components**: Reusable UI elements like EventCard, EventFilters, and AddEventForm
+- **Services**: Business logic for handling events and data
+- **Types**: TypeScript definitions for data models
+- **Mock Data**: Sample event data to demonstrate functionality
 
-Follow these steps:
+### Data Management
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Events are stored in the browser's localStorage
+- The app includes mock data that's loaded when first run
+- New events can be added through the submission form
+- All data persists between sessions
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Event Types
 
-# Step 3: Install the necessary dependencies.
-npm i
+Events are categorized into four types, each with its own color scheme:
+- Hackathons (Purple)
+- Workshops (Blue)
+- Tech Talks (Orange)
+- Other Events (Pink)
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```
+   git clone <repository-url>
+   cd event-beacon-central
+   ```
+
+2. Install dependencies:
+   ```
+   npm install
+   ```
+
+3. Run the development server:
+   ```
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:8080`
+
+## Usage
+
+### Browsing Events
+
+The main dashboard displays all upcoming events in a card layout. You can:
+- Scroll through events
+- Use filters to narrow down options
+- Click on any event card to view details
+
+### Adding Events
+
+To add a new event:
+1. Click the "Add Event" button
+2. Fill out the event details form
+3. Submit the form
+4. The new event will appear in the dashboard
+
+### Filtering Events
+
+Use the filter controls to find specific events:
+- Search by keyword
+- Filter by event type
+- Filter by college
+- Filter by date range
+
+## Project Structure
+
+```
+src/
+├── components/         # Reusable UI components
+├── data/               # Mock data for events and colleges
+├── hooks/              # Custom React hooks
+├── lib/                # Utility functions
+├── pages/              # Main page components
+├── services/           # Business logic services
+├── types/              # TypeScript type definitions
+├── App.tsx             # Main application component
+└── main.tsx            # Application entry point
 ```
 
-**Edit a file directly in GitHub**
+## Future Enhancements
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+- User authentication and profiles
+- Event recommendations based on user preferences
+- Calendar export functionality
+- Real-time notifications for upcoming events
+- Backend integration for persistent data storage
+- Web scraping of college websites for automatic event discovery
+- Social features like sharing and saving events
 
-**Use GitHub Codespaces**
+## License
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/8de1ec48-87d0-4acf-b725-efa29344e0d9) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is licensed under the MIT License - see the LICENSE file for details.
